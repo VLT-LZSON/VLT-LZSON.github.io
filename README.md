@@ -14,10 +14,10 @@
 
 <body>
     <div class="container">
-        <h1>Welcome to My Project Page</h1>
+        <h1>Navigation Meets Language Models: Enhancing Zero-shot Object Navigation with Vision-Language Models and Tree of Thoughts </h1>
         
         <section class="project-info">
-            <h2 class="project-name">Project Name: Amazing Project</h2>
+            <h2 class="project-name">VLTNet</h2>
             <img src="path/to/demo-image.jpg" alt="Demo of Amazing Project" class="demo-image">
             
             <div class="video-section">
