@@ -19,35 +19,34 @@ Navigation with Vision-Language Models and Tree of Thoughts</title>
         <img src="fig_intro5.png" alt="intro-image" class="intro-image" width="500">
         <section class="Abstract">
             <!-- <h2>Abstract</h2> -->
-            <p> Object navigation is crucial for robots, but tra-
-ditional methods require substantial training data and cannot
-generalize to unknown environments. Zero-shot object naviga-
-tion (ZSON) aims to address this challenge, enabling robots
-to interact with unfamiliar objects without specific training
-data. Language-driven zero-shot object navigation (L-ZSON)
-is an extension of ZSON that incorporates natural language
-instructions to guide robot navigation and interaction with
-objects. In this paper, we propose VLTNet for L-ZSON, a
-novel Vision Language model with a Tree-of-thought NETwork.
-VLTNet comprises four main modules: vision language model
-understanding, semantic mapping, tree-of-thought reasoning
-and exploration, and goal identification. Among these mod-
-ules, tree-of-thought (ToT) reasoning and exploration serve as
-core components, innovatively using the ToT reasoning frame-
-work for frontier selection in robot exploration. Compared
-to traditional Large Language Models (LLMs), ToT reason-
-ing involves multi-path reasoning processes and backtracking
-when necessary, enabling globally informed decision-making.
-Experimental results on benchmarks such as PASTURE and
-RoboTHOR demonstrate the outstanding performance of our
-model in LZSON, particularly in scenarios involving complex
+            <p> Object navigation is crucial for robots, but traditional methods require substantial training data and cannot
+                generalize to unknown environments. Zero-shot object naviga-
+                tion (ZSON) aims to address this challenge, enabling robots
+                to interact with unfamiliar objects without specific training
+                data. Language-driven zero-shot object navigation (L-ZSON)
+                is an extension of ZSON that incorporates natural language
+                instructions to guide robot navigation and interaction with
+                objects. In this paper, we propose VLTNet for L-ZSON, a
+                novel Vision Language model with a Tree-of-thought NETwork.
+                VLTNet comprises four main modules: vision language model
+                understanding, semantic mapping, tree-of-thought reasoning
+                and exploration, and goal identification. Among these mod-
+                ules, tree-of-thought (ToT) reasoning and exploration serve as
+                core components, innovatively using the ToT reasoning frame-
+                work for frontier selection in robot exploration. Compared
+                to traditional Large Language Models (LLMs), ToT reason-
+                ing involves multi-path reasoning processes and backtracking
+                when necessary, enabling globally informed decision-making.
+                Experimental results on benchmarks such as PASTURE and
+                RoboTHOR demonstrate the outstanding performance of our
+                model in LZSON, particularly in scenarios involving complex
                 natural language as goal instructions.</p>
             
         </section>
 
         <!-- Content Section -->
         <section class="content">
-            <h1>Approach</h1>
+            <h1 style="text-align: center; font-family: Arial;">Approach</h1>
             <img src="fig_overview6.png" alt="pipeline-image" width="1000" class="pipeline-image" >
             <p>VLTNet coordinates four main modules to tackle the L-ZSON tasks</p>
             <h2>Vision Language Model Understanding Module</h2>
