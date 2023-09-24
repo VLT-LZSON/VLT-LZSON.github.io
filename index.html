@@ -16,7 +16,7 @@ Navigation with Vision-Language Models and Tree of Thoughts</title>
         <h2 style="text-align: center; font-family: Arial;">Enhancing Zero-shot Object Navigation with Vision-Language Models and Tree of Thoughts</h2>
         <h3 style="text-align: center; font-family: Arial; font-size: small;">CongCong Wen<sup>1*</sup>, Yisiyuan Huang<sup>2*</sup>, Yanjia Huang<sup>2</sup>, Wenyu Han<sup>2</sup>,<br>Shuaihang Yuan<sup>1</sup>, Yu-Shen Liu<sup>3</sup> and Yi Fang<sup>1</sup></h3>
         <!-- Introduction Section -->
-        <img src="fig_intro5.png" alt="intro-image" class="intro-image" width="500">
+        <img src="fig_intro5.png" alt="right-image" class="right-image" width="500">
         <section class="Abstract">
             <!-- <h2>Abstract</h2> -->
             <p> Object navigation is crucial for robots, but traditional methods require substantial training data and cannot
@@ -48,17 +48,38 @@ Navigation with Vision-Language Models and Tree of Thoughts</title>
         <section class="content">
             <h1 style="text-align: center; font-family: Arial;">Approach</h1>
             <img src="fig_overview6.png" alt="pipeline-image" width="1000" class="pipeline-image" >
-            <p>VLTNet coordinates four main modules to tackle the L-ZSON tasks</p>
+            <h1 style="text-align: center;">VLTNet coordinates four main modules to tackle the L-ZSON tasks:</h1>
+            
             <h2>Vision Language Model Understanding Module</h2>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam sapiente laboriosam, nihil tempora dolores libero at, dignissimos, explicabo impedit nemo incidunt aut atque! Nulla porro, illo quidem aliquid ullam itaque!</p>
+            <img src="VLM-demo.png" alt="left-image" class="left-image" width="700">
+            <br><br><br>
+            <p>Based on RGB observations,the VLM understanding Module will utilize pre-trained Visual-Grounding Models to detect objects seen in the current frame. Our VLNet Model applied GLIP to identify each object and draw out corresponding bounding boxes.</p>
+            <br><br><br>
+            
+            <img src="semantic-map-demo.png" alt="right-image" class="right-image" width="500">
             <h2>Semantic Mapping Module</h2>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam sapiente laboriosam, nihil tempora dolores libero at, dignissimos, explicabo impedit nemo incidunt aut atque! Nulla porro, illo quidem aliquid ullam itaque!</p>
-
+            
+            <p>The Semantic Mapping module reconstructs a 2D navigation map based on the depth input, and robot pose. Based on the semantic understanding of objects and rooms obtained by the VLM Understanding Module, the mapping module locates identified objects in the navigation map to generate a semantic navigation map.</p>
+            
+            <br><br><br><br><br>
             <h2>Tree of Thoughts Exploration Module</h2>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam sapiente laboriosam, nihil tempora dolores libero at, dignissimos, explicabo impedit nemo incidunt aut atque! Nulla porro, illo quidem aliquid ullam itaque!</p>
+            <p>Tree of Thoughts Exploration Modules incorporates Frontier-Based Exploration as the basis for navigation strategies.
+                By analyzing current semantic information provided by the navigation map, VLTNet innovatively utilizes LLM such as GPT-3.5  to identify unexplored areas that are likely proximate to the target object.
+                Noting the potential inaccuracies and multiple candidate frontiers inferred by the language model, we integrate the tree-of-thoughts mechanism. 
+                ToT employs a structured tree-based approach to decision-making, allowing for organized and systematic exploration, which enhances the model's ability to make informed choices in complex environments. 
+                Therefore, our method aids in refining and pinpointing the most promising frontier points, effectively bridging the vast insights of the language model with precision in frontier selection, 
+                thus enabling more informed and context-aware robotic exploration.</p>
+            <img src="ToT-demo.png" alt="intro-image" class="pipeline-image" width="1000">
 
             <h2>Goal identification Module</h2>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam sapiente laboriosam, nihil tempora dolores libero at, dignissimos, explicabo impedit nemo incidunt aut atque! Nulla porro, illo quidem aliquid ullam itaque!</p>
+            <p>The Goal Identification module determines whether the current object navigated to matches the target object.
+                Our definition of the target object extends beyond simple categories, like "alarm clock." 
+                It encompasses more intricate spatial or appearance-based descriptions such as: "Alarm clock on a dresser near a desk lamp, bed" or "Small, metallic alarm clock." 
+                Thus, a basic algorithm that merely checks if the current object is an "alarm clock" is insufficient. 
+                To make a more informed judgment about whether the scene's context aligns with the target's description, we employ GPT-3.5. 
+                By analyzing the textual descriptions of the target and the currently detected object, this model offers a profound semantic understanding. 
+                It takes into account context and semantic associations to accurately determine the congruence between them.</p>
+                <img src="goalid-demo.png" alt="intro-image" class="pipeline-image" width="1000">
 
             
 
