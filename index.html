@@ -85,7 +85,7 @@ Navigation with Vision-Language Models and Tree of Thoughts</title>
 
             <div class="video-section">
                 <h2>Trajectory visualization:</h2>
-                <p>Here we give a visualized comparison between VLTNet and ESC on different benchmarks in PASTURE Dataset.</p>
+                <p>Here we give a visualized comparison between VLTNet and Exploration with Soft Common Sense (ESC) model on different benchmarks in PASTURE Dataset, as a comparison between Tree-of-Thoughts (ToT) Exploration and Probability Soft Logic (PSL) Exploration Module</p>
                 <h1>VLTNet</h1>
                 <video controls class="demo-video">
                     <source src="longtail.mp4" type="video/mp4">
@@ -100,16 +100,18 @@ Navigation with Vision-Language Models and Tree of Thoughts</title>
                 </video>
                 <h1>ESC</h1>
                 <video controls class="demo-video">
-                    <source src=".mp4" type="video/mp4">
+                    <source src="esc-longtail.mp4" type="video/mp4">
                 </video>
 
                 <video controls class="demo-video">
-                    <source src=".mp4" type="video/mp4">
+                    <source src="esc-spatial.mp4" type="video/mp4">
                 </video>
 
                 <video controls class="demo-video">
-                    <source src=".mp4" type="video/mp4">
+                    <source src="esc-appearance.mp4" type="video/mp4">
                 </video>
+                <p>We can notice that ESC model tends to explore nearby frontiers first because ESC model employs PSL during commonsense reasoning, which prefers closer frontiers. For our VLTNet that employs ToT reasoning, since LLM models doesn't take frontier distances into consideration, VLTNet robots would sometimes to explore further areas that it deemed to have high likelyhood of finding target objects.</p>
+                <p>ESC model was not designed for L-ZSON tasks and therefore overly complex prompts can disrupt its performance. Both ESC model and VLTNet succeeded in both Uncommon Object Goals and Object Goals with Appearance Attributes. However, in the Object Goal with Spatial Attributes, while ESC failed under the disruption of complex spatial description, our VLTNet model was able to successfully locate the target.</p>
             </div>
             
         </section>
